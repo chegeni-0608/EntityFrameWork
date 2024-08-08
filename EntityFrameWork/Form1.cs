@@ -20,7 +20,7 @@ namespace EntityFrameWork
 
         private void btnInsertWithEF_Click(object sender, EventArgs e)
         {
-            using (var dbContext=new CsharpSampleDBEntities())
+            using (var dbContext = new CsharpSampleDBEntities())
             {
                 var student = new Student()
                 {
@@ -37,12 +37,12 @@ namespace EntityFrameWork
 
         private void btnSelectWithEF_Click(object sender, EventArgs e)
         {
-         using (var dbContext=new CsharpSampleDBEntities())
+            using (var dbContext = new CsharpSampleDBEntities())
             {
                 var result = dbContext.Students.OrderBy(x => x.FirstName)
                 .Select(x => new { x.Id, FullName = x.FirstName + " " + x.LastName, x.NationalCode });
 
-                dataGridView1.DataSource=result.ToList();
+                dataGridView1.DataSource = result.ToList();
             }
         }
 
@@ -66,6 +66,50 @@ namespace EntityFrameWork
                 db.Students.Remove(item);
                 db.SaveChanges();
                 MessageBox.Show("Delete Succ.....");
+            }
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
+            private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void btnShowItemInfo_Click(object sender, EventArgs e)
+        {
+            {
+                int id = Convert.ToInt32(txtId.Text);
+
+                using (var db = new CsharpSampleDBEntities())
+                {
+                    Student item = db.Students.Find(id);
+
+                    txtFirstName.Text = item.FirstName;
+                    txtLastName.Text = item.LastName;
+                    //Convert.ToInt32(txtNationalCode) = item.NationalCode;
+                }
+            }
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txtId.Text);
+
+            using (var db = new CsharpSampleDBEntities())
+            {
+                Student item = db.Students.Find(id);
+
+                item.FirstName = txtFirstName.Text;
+                item.LastName = txtLastName.Text;
+                //item.NationalCode = txtNationalCode.Text;
+
+                db.SaveChanges();
+                MessageBox.Show("Update Succ......");
+
             }
         }
     }
