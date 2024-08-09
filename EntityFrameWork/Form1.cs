@@ -17,7 +17,7 @@ namespace EntityFrameWork
         {
             InitializeComponent();
         }
-
+        //Insert
         private void btnInsertWithEF_Click(object sender, EventArgs e)
         {
             using (var dbContext = new CsharpSampleDBEntities())
@@ -34,7 +34,7 @@ namespace EntityFrameWork
                 MessageBox.Show("Insert Succ....");
             }
         }
-
+        //Select
         private void btnSelectWithEF_Click(object sender, EventArgs e)
         {
             using (var dbContext = new CsharpSampleDBEntities())
@@ -50,7 +50,7 @@ namespace EntityFrameWork
         {
 
         }
-
+        //Delete
         private void btnDelete_Click(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(txtId.Text);
@@ -79,7 +79,7 @@ namespace EntityFrameWork
         {
 
         }
-
+        //Update
         private void btnShowItemInfo_Click(object sender, EventArgs e)
         {
             {
@@ -91,7 +91,7 @@ namespace EntityFrameWork
 
                     txtFirstName.Text = item.FirstName;
                     txtLastName.Text = item.LastName;
-                    //Convert.ToInt32(txtNationalCode) = item.NationalCode;
+                    txtNationalCode.Text = item.NationalCode.ToString();
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace EntityFrameWork
 
                 item.FirstName = txtFirstName.Text;
                 item.LastName = txtLastName.Text;
-                //item.NationalCode = txtNationalCode.Text;
+                item.NationalCode.ToString();
 
                 db.SaveChanges();
                 MessageBox.Show("Update Succ......");
