@@ -26,7 +26,7 @@ namespace EntityFrameWork
                 {
                     FirstName = "Morteza",
                     LastName = "Chegeni",
-                    NationalCode = 3962543600,
+                    NationalCode = "0023763191",
                     Gender = true
                 };
                 dbContext.Students.Add(student);
@@ -46,10 +46,6 @@ namespace EntityFrameWork
             }
         }
 
-        private void txtId_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         //Delete
         private void btnDelete_Click(object sender, EventArgs e)
         {
@@ -69,16 +65,6 @@ namespace EntityFrameWork
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        
-            private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
         //Update
         private void btnShowItemInfo_Click(object sender, EventArgs e)
         {
@@ -105,7 +91,7 @@ namespace EntityFrameWork
 
                 item.FirstName = txtFirstName.Text;
                 item.LastName = txtLastName.Text;
-                item.NationalCode.ToString();
+                item.NationalCode = txtNationalCode.Text;
 
                 db.SaveChanges();
                 MessageBox.Show("Update Succ......");

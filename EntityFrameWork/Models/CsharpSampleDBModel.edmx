@@ -35,7 +35,7 @@
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nchar" MaxLength="64" />
           <Property Name="LastName" Type="nchar" MaxLength="64" />
-          <Property Name="NationalCode" Type="bigint" />
+          <Property Name="NationalCode" Type="nchar"  MaxLength="64" />
           <Property Name="Gender" Type="bit" />
         </EntityType>
         <EntityType Name="Suplier">
@@ -121,7 +121,7 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="64" FixedLength="true" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="64" FixedLength="true" Unicode="true" />
-          <Property Name="NationalCode" Type="Int64" />
+          <Property Name="NationalCode" Type="String" MaxLength="64" />
           <Property Name="Gender" Type="Boolean" />
         </EntityType>
         <EntityType Name="Suplier">

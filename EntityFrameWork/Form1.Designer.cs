@@ -91,7 +91,6 @@
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(100, 20);
             this.txtId.TabIndex = 4;
-            this.txtId.TextChanged += new System.EventHandler(this.txtId_TextChanged);
             // 
             // label1
             // 
@@ -150,7 +149,7 @@
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(133, 20);
             this.txtLastName.TabIndex = 11;
-            this.txtLastName.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            
             // 
             // label3
             // 
